@@ -1,0 +1,12 @@
+{
+    "short_name": "Isak",
+    "name": "Isak Antin",
+    "lang": "en",
+    "description": "A portfolio made by front-end developer student Isak Antin",
+    "background_color": "#f8f9fa",
+    "theme_color": "#f26419",
+    "dir": "ltr",
+    "display": "standalone",
+    "orientation": "any",
+    "prefer_related_applications": "false"
+   }

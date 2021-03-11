@@ -1,0 +1,143 @@
+@media only screen and (min-width: 1281px) {
+  //remove burger
+  .navbar {
+    label {
+      display: none;
+    }
+  }
+  //navbar open style
+  .navbar__content #navbar-toggle ~ {
+    .menu {
+      visibility: visible;
+      opacity: 0.99;
+    }
+  }
+  //navbar design customized for desktop version
+  .navbar nav {
+    height: 100vh;
+    width: 3%;
+    position: fixed;
+    z-index: 1;
+    border-right: 2px solid black;
+    background: rgba($color: $background, $alpha: 0.9);
+
+    //navbar links customized for desktop version
+    ul {
+      li {
+        a {
+          position: absolute;
+          transform: rotate(-90deg);
+          font-size: 0.7em;
+        }
+        .home__button {
+          @include about__buttons;
+          bottom: 260px;
+        }
+        .about__button {
+          @include about__buttons;
+           bottom: 140px;
+        }
+        .resume__button {
+          @include about__buttons;
+          bottom: 20px;
+        }
+      }
+    }
+  }
+  //Header content
+  .header__container {
+    header {
+      //header name
+      .header__name {
+        font-size: 3.1em;
+      }
+      //header bread text
+      .header__description {
+        font-size: 1.5em;
+        margin-top: -1.5em;
+      }
+      //header socials
+      .header__list {
+        .header__links {
+          img {
+            width: 35px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+  //previous experience and projects
+  .work__container {
+    width: 97%;
+    float: right;
+    height: 102vh;
+    //image holder
+    .work__content {
+      margin: 4% auto 0% auto;
+      height: 22vh;
+      width: 85vw;
+      //image positioning in div
+      img {
+        height: auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    //Picture breadtext
+    p {
+      display: block;
+      font-size: 1.2em;
+      color: black;
+      left: 8.5vw;
+      margin-top: 1px;
+    }
+  }
+  //about page
+  //about page arrangement
+  .about__container {
+    width: 100%;
+    float: right;
+    .about__section {
+      width: auto;
+      margin: 0%;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      //about name
+      .about__name {
+        font-size: 2.5em;
+        margin-bottom: 0;
+        border-bottom: 0px;
+      }
+      //about description
+      .about__description {
+        font-size: 1.1em;
+        //adds linebreaks on larger units
+        br {
+          display: block;
+        }
+      }
+    }
+  }
+  //social links on about page
+  //social links placement
+  .social__section {
+    font-size: 1.2em;
+    .social__content {
+      //social links
+      .social__list {
+        margin: 0% auto;
+        width: 22%;
+        .social__links {
+          img {
+            width: 25px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

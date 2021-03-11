@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Roboto:wght@400;500&family=Source+Sans+Pro:wght@300;400&display=swap");
+
+body {
+  background-color: $background;
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 280px) {
+  //navbar container
+  .navbar__fixed {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    left: 85%;
+  }
+
+   //burger placement
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    line-height: 70px;
+    label {
+      user-select: none;
+      margin: 1.5em -2.5em 0em 0em;
+      position: relative;
+      z-index: 3;
+      //burger style
+      i {
+        height: 0.1em;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 18px;
+        &:before,
+        &:after {
+          content: "";
+          height: 100%;
+          position: absolute;
+          transition: all 0.2s ease-out;
+          width: 100%;
+        }
+        display: block;
+        background: #f26419;
+        &:before,
+        &:after {
+          display: block;
+          background: $orange;
+        }
+        &:before {
+          top: 5px;
+        }
+        &:after {
+          top: -5px;
+        }
+      }
+    }
+    //remove checkbox that's used for navbar
+    #navbar-toggle {
+      display: none;
+    }
+  }
+  //function that opens navbar when clicking burger
+  .navbar__content #navbar-toggle:checked ~ {
+    .menu {
+      visibility: visible;
+      opacity: 0.99;
+    }
+    //burger animation
+    label {
+      i {
+        background: transparent;
+        &:before {
+          transform: rotate(-45deg);
+        }
+        &:after {
+          transform: rotate(45deg);
+        }
+      }
+      &:not(.steps) i {
+        &:before,
+        &:after {
+          top: 0;
+        }
+      }
+    }
+  }
+  //open navbar design
+  .navbar nav {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.3s ease-out;
+    display: table;
+    background: rgba($color: $background, $alpha: 0.9);
+    ul {
+      margin: 0;
+      padding: 20px 0;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    li {
+      display: block;
+      text-align: center;
+      padding: 4vh 0%;
+      font-size: 2em;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+      font-family: "Roboto Mono", monospace;
+    }
+  }
+  //Header content
+  .header__container {
+    height: 100vh;
+    header {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      //header name
+      .header__name {
+        text-align: center;
+        color: $orange;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        font-family: "Roboto Mono", monospace;
+        &::before {
+          content: "/";
+        }
+      }
+      //header bread text
+      .header__description {
+        font-family: "Source Sans Pro", sans-serif;
+        margin-top: -1em;
+        margin-bottom: -0.5em;
+        color: #4b4b4b;
+      }
+      //header social links
+      .header__list {
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+ //previous experience and projects
+  .work__container {
+    height: 100vh;
+    font-family: "Roboto Mono", monospace;
+    //image holder
+    .work__content {
+      overflow: hidden;
+      height: 33.33vh;
+      width: 100vw;
+      //white text on pictures
+      a {
+        color: white;
+        font-size: 0.8em;
+      }
+      //image positioning in div
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+      }
+    }
+    //removes the text under pictures used on desktop
+    p {
+    position: absolute;
+    font-size: 0.7em;
+    color: white;
+    z-index: 1;
+    right: 0%;
+    margin-top: -20px;
+    }
+  }
+  //About page
+    //about page arrangement
+  .about__container {
+    font-family: "Source Sans Pro", sans-serif;
+    .about__section {
+      width: 80%;
+      margin: 15% auto 0% auto;
+      //about name
+      .about__name {
+        color: $orange;
+        font-weight: 400;
+        letter-spacing: -0.05em;
+        font-family: "Roboto Mono", monospace;
+        margin-bottom: 0.5em;
+        border-bottom: 0.1em solid $orange;
+      }
+      //about description
+      .about__description {
+        margin-top: 1.2em;
+        a {
+          color: black;
+        }
+        //remove line breaks on smaller units
+        br {
+          display: none;
+        }
+      }
+    }
+    //social links on about page
+    //social links placement
+    .social__section {
+      position: absolute;
+      bottom: 10%;
+      width: 100%;
+      .social__content {
+        width: 75%;
+        margin: 0 auto;
+        //socials bread text
+        .social__text {
+          text-align: center;
+          color: rgb(75, 75, 75);
+        }
+        //social links
+        .social__list {
+          padding: 0;
+          list-style-type: none;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}

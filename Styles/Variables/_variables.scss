@@ -1,0 +1,28 @@
+//Navbar Variables
+$button-height: 27px;
+$button-width: 35px;
+
+//Colors
+$orange: #F26419;
+$background: #F8F9FA;
+
+$color-background: #F5F5F5;
+$color-main: #1abc9c;
+$color-active: #FFF;
+$color-link: #FFF;
+
+//Mixins
+
+@mixin about__buttons {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+@mixin work__overlay__text-placement ($top) {
+    white-space: pre-line;
+    position: absolute;
+    top: $top;
+    right: 1%;
+}
